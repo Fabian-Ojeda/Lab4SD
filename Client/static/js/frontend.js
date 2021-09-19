@@ -1,5 +1,5 @@
 var localHour = new Date();
-const socket = io("http://127.0.0.1:3000/chanel1");
+const socket = io("http://192.168.1.38:3000/chanel1");
 
 socket.on("change", (hoursIn, minutesIn, secondsIn) => {
     document.getElementById('tableHistory').innerHTML+=`<tr>              
