@@ -1,0 +1,28 @@
+#containerClock{
+	justify-content: center;
+	align-items: center;
+}
+
+#buttonChangeLocalHour{
+	margin: 2%;
+	width: 300px;
+  	height: 50px;
+  	font-size: 30px;
+  	text-decoration: none;
+    color: #ffffff;
+    background-color: #000561;
+    border-radius: 6px;
+    border: 2px solid #E00029;
+}
+
+.mainClock{
+	font-size: 100px;
+}
+
+.inputClock {
+  width: 250px;
+  height: 300px;
+  font-family: Agency FB;
+  font-size: 280px ;
+  text-align: center;
+}
