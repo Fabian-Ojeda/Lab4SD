@@ -6,13 +6,13 @@
 #buttonChangeLocalHour{
 	margin: 2%;
 	width: 300px;
-  	height: 50px;
-  	font-size: 30px;
-  	text-decoration: none;
-    color: #ffffff;
-    background-color: #000561;
-    border-radius: 6px;
-    border: 2px solid #E00029;
+  height: 50px;
+  font-size: 30px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000561;
+  border-radius: 6px;
+  border: 2px solid #E00029;
 }
 
 .mainClock{

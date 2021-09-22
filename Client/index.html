@@ -1,51 +1,42 @@
 <html>
-
-<head>
-    <meta charset='utf-8'>
-    <title>Panel de control</title>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel='stylesheet' type='text/css' media='screen' href='static/css/main.css'>
-    
-</head>
-
-<body style="background-color:#AEE6DF;">
-    <center>
-        <h1 style="padding: 2%;">Relojes en sincronia</h1>
-    </center>      
-    <div class="container my-3">
+    <head>
+        <meta charset='utf-8'/>
+        <title>Panel de control</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"/>
+        <link rel='stylesheet' type='text/css' media='screen' href='static/css/main.css'/>
+    </head>
+    <body style="background-color:#E9E9F0;">
         <center>
-        <h2>Hora actual</h2>
-        <div id="containerClock" class="container my-3" style="display:flex;">
-            <input class="inputClock" type="number" id="hours" name="" min="00" max="23">
-            <label class="mainClock">:</label>
-            <input class="inputClock"type="number" id="minutes" name="" min="00" max="59">
-            <label class="mainClock">:</label>
-            <input class="inputClock" type="number" id="seconds" name="" min="00" max="59">       
-        </div>
-        <button id=buttonChangeLocalHour onclick="changeLocalHour()">Cambiar la hora local</button>
+            <h1 style="padding: 2%;">Relojes en sincronia</h1>
         </center>
-    </div>
-
-    <div class="container my-3" id= "containerTabla">
-        <h2>historial de horas</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Hora local</th>
-              <th scope="col">Descuadre</th>
-              <th scope="col">nueva hora</th>              
-            </tr>
-          </thead>
-          <tbody id='tableHistory'>            
-          </tbody>
-        </table>
-    </div>
-    
-    <script src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="./static/js/frontend.js"></script>  
-</body>
-
-
+        <div class="container my-3">
+            <center>
+                <h2>Hora actual</h2>
+                <div id="containerClock" class="container my-3" style="display:flex;">
+                    <input class="inputClock" type="number" id="hours" name="" min="00" max="23"/>
+                    <label class="mainClock">:</label>
+                    <input class="inputClock"type="number" id="minutes" name="" min="00" max="59"/>
+                    <label class="mainClock">:</label>
+                    <input class="inputClock" type="number" id="seconds" name="" min="00" max="59"/>
+                </div>
+                <button id=buttonChangeLocalHour onclick="changeLocalHour()">Cambiar la hora local</button>
+            </center>
+        </div>
+        <div class="container my-3" id= "containerTabla">
+            <h2>historial de horas</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Hora local</th>
+                        <th scope="col">Descuadre</th>
+                        <th scope="col">nueva hora</th>
+                    </tr>
+                </thead>
+                <tbody id='tableHistory'></tbody>
+            </table>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="./static/js/frontend.js"></script>
+    </body>
 </html>
