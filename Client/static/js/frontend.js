@@ -30,7 +30,13 @@ function transformHour(hours, minutes, seconds) {
     return localHour.getHours() + ':' + localHour.getMinutes() + ':' + localHour.getSeconds()
 }
 
+function sendFirstHour(){
+    socket.emit('localHour', localHour.getTime())
+}
+
 setInterval(function() {
     socket.emit('localHour', localHour.getTime())
 }, 10000)
 printHour()
+
+sendFirstHour()
