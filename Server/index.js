@@ -56,8 +56,6 @@ var eventSyncHour = setInterval(function () {
   syncHours()
 }, 60000)
 
-
-
 function consultHourFromApi() {
   axios.get('http://api.timezonedb.com/v2.1/get-time-zone?key=55837ZQHL3VN&format=json&fields=countryCode,countryName,regionName,timestamp,formatted&by=zone&zone=America/Bogota')
     .then(function (response) {
@@ -127,8 +125,6 @@ function syncHours() {
     sendHourToClients(element.id, hours, minutes, seconds)
   });
 }
-
-
 
 server.listen(3000, () => {
   console.log('listening on *:3000');
