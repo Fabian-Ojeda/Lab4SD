@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Clock's Dashboard</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+  <div id="app">
+    <h1>Sincronizador de Relojes</h1>
+    <h2>Dashboard</h2>
+    <hr>
+    <section v-if="errored">
+      <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+    </section>
+
+    <section v-else>
+      <div v-if="loading">Cargando...</div>
+
+      <div v-else v-for="currency in data" class="currency">
+        <br><br>
+        <b>Identificador del Reloj:</b><br>
+        {{currency.id}}<br><br>
+        <b>Informacion del Reloj</b><br>
+        {{currency.date}}<br><br>
+      </div>
+  </div>
+  </section>
+  <hr>
+  <button onclick="clock()" class="btn btn-success">Crear nuevo reloj</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+  <script src="./js/frontend.js"></script>
+</body>
+</html>

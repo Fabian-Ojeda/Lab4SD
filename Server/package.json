@@ -10,8 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.4",
+    "child-process-async": "^1.0.1",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "http": "0.0.1-security",
+    "nodemon": "^2.0.13",
     "socket.io": "^4.2.0"
   }
 }
