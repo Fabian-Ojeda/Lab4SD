@@ -11,6 +11,7 @@ const io = require("socket.io")(server, {
     origin: "*",
   },
 });
+app.use("/static", express.static("static"));
 const config = {
   application: {
     cors: {
@@ -44,12 +45,7 @@ io.of('/time').on('connection', (socket) => {
     refreshClientsHours(socket.id, data)
   });
 });
-/*
-setTimeout(function() {
-  var event = setInterval(function() {
-    io.of('/chanel1').emit('message', 'vamos por buen camino')
-  },2000)
-},4000)*/
+
 var eventConsultHour = setInterval(function () {
   consultHourFromApi()
 }, 15000)
@@ -156,7 +152,7 @@ function createVM(ip, id) {
         "\n cd Client"+
         "\n sudo npm i" +
         "\n sudo npm i -g pm2" +
-        "\n pm2 start index.js" +
+        "\n sudo pm2 start index.js" +
         "\nSHELL" +
         "\nend",
       function (err) {
@@ -169,6 +165,10 @@ function createVM(ip, id) {
   });
   exec("cd resources/vm/" + id +"/&&vagrant up --provision");
 }
+
+app.get('/',(req, res)=>{
+  res.sendFile(__dirname + '/index.html')
+})
 
 app.post('/clock',(req, res)=>{
   generateInstanceNetwork();

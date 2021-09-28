@@ -1,4 +1,4 @@
-const socket = io("http://192.168.100.14:3000/");
+const socket = io("http://192.168.1.38:3000/");
 
 Vue.component("todo-item", {
   props: ["todo"],
